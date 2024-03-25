@@ -1,11 +1,12 @@
-import java.util.*;
+import java.io.*;
 import java.util.Scanner;
-class employee{
-int eNo;
-String eName;
-double salary;
 
-employee(int eNo,String eName,double salary)
+class employee{
+	int eNo;
+	String eName;
+	double salary;
+
+	employee(int eNo,String eName,double salary)
 {
 this.eNo=eNo;
 this.eName=eName;
@@ -24,7 +25,7 @@ employee[] employees=new employee[n];
 
 //read employee information
 for(int i=0;i<n;i++){
-System.out.println("Enter the details for employee");
+System.out.println("Enter the details for employee"+(i+1)+":");
 System.out.print("Employee number");
 int eNo=scanner.nextInt();
 System.out.println("Employee name");
@@ -39,7 +40,7 @@ int searchEno=scanner.nextInt();
 boolean found=false;
 
 for(employee emp:employees){
-if(emp.eNo==searchENo){
+if(emp.eNo==searchEno){
 System.out.println("Employee found");
 System.out.println("Employee number :"+emp.eNo);
 System.out.println("Employee name"+emp.eName);
@@ -49,10 +50,7 @@ break;
 }
 }
 if(!found){
-System.out.println("Employee with employee number"+searchENo+"not found");
+System.out.println("Employee not found");
 }
 }
 }
-
-
-
